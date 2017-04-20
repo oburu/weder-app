@@ -1,28 +1,31 @@
 import React, {Component} from 'react';
+import WeatherMessage from './weather_message';
 
 class Main extends Component{
   render(){
+    let {isLoading, location, temp, description, image, errorMessage} = this.props.weather;
+    let renderMessage = () =>{
+      if(isLoading){
+        return <h3>Fetching weather... </h3>
+      }else if (temp && location){
+        return <WeatherMessage location={location} temp={temp} description={description} image={image}/>
+      }
+    }
+
+    let renderError = () => {
+      if(typeof errorMessage === 'string'){
+        return <div>{errorMessage}</div>
+      }
+    }
     return(
       <section className="section main-layer night">
         <div className="container-fluid">
           <div className="row">
             <div className="bg-layer d-flex justify-content-center">
               <div className="maincontent-wrapper">
-                <div className="main-content fade-in">
-                  <h1 className="city">Manchester</h1>
-                  <p className="weather-description">Broken clouds</p>
-                  <span className="weather-img broken-clouds"></span>
-                  <p className="temperature">20°</p>
-                  <div className="weather-details">
-                    <div className="wd keys">
-                      <p className="pressure">Pressure</p>
-                      <p className="humidity">Humidity</p>
-                    </div>
-                    <div className="wd values">
-                      <p>1006hpa</p>
-                      <p>52%</p>
-                    </div>
-                  </div>
+                <div className={this.props.fadeIn}>
+                  {renderMessage()}
+                  {renderError()}
                 </div>
                 <div className="footer">
                   <p>Made with love and sweat by <a href="#" target="_blank">Rebus.io</a></p>
