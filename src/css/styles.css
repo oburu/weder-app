@@ -1,0 +1,257 @@
+body, html {
+  height: 100%;
+  width: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif; }
+
+p {
+  text-align: center;
+  color: #efefef; }
+
+h1 {
+  text-align: center;
+  color: #efefef;
+  font-weight: 300; }
+
+a:hover, a:focus {
+  text-decoration: none; }
+
+.section {
+  position: fixed; }
+
+.burger-layer {
+  height: 60px;
+  width: 100%;
+  z-index: 5; }
+
+.burger-container {
+  position: absolute;
+  display: inline-block;
+  top: 20px;
+  right: 20px;
+  transition: all 200ms ease-in-out; }
+  .burger-container .burger {
+    cursor: pointer; }
+    .burger-container .burger span {
+      background: white;
+      display: block;
+      width: 27px;
+      height: 4px;
+      margin-bottom: 6px;
+      position: relative;
+      border-radius: 2px;
+      top: 0;
+      transition: all 400ms ease-in-out; }
+  .burger-container.open span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 12px; }
+  .burger-container.open span:nth-child(2) {
+    width: 0;
+    opacity: 0; }
+  .burger-container.open span:nth-child(3) {
+    transform: rotate(45deg);
+    top: -8px; }
+
+.main-layer {
+  width: 100%;
+  height: 100%;
+  display: block; }
+  .main-layer.day {
+    background: #198AFF;
+    background: #198AFF;
+    background: -moz-linear-gradient(top, #198AFF 0%, #75B3F5 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #198AFF), color-stop(100%, #75B3F5));
+    background: -webkit-linear-gradient(top, #198AFF 0%, #75B3F5 100%);
+    background: -o-linear-gradient(top, #198AFF 0%, #75B3F5 100%);
+    background: -ms-linear-gradient(top, #198AFF 0%, #75B3F5 100%);
+    background: linear-gradient(to bottom, #198AFF 0%, #75B3F5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /* IE6-9 */ }
+  .main-layer.night {
+    background: #010F26;
+    background: #010F26;
+    background: url(./img/estrellas-noche.png) repeat-x, -moz-linear-gradient(top, #010F26 0%, #195699 100%);
+    background: url(./img/estrellas-noche.png) repeat-x, -webkit-gradient(linear, left top, left bottom, color-stop(0%, #010F26), color-stop(100%, #195699));
+    background: url(./img/estrellas-noche.png) repeat-x, -webkit-linear-gradient(top, #010F26 0%, #195699 100%);
+    background: url(./img/estrellas-noche.png) repeat-x, -o-linear-gradient(top, #010F26 0%, #195699 100%);
+    background: url(./img/estrellas-noche.png) repeat-x, -ms-linear-gradient(top, #010F26 0%, #195699 100%);
+    background: url(./img/estrellas-noche.png) repeat-x, linear-gradient(to bottom, #010F26 0%, #195699 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /* IE6-9 */ }
+  .main-layer .container-fluid {
+    height: 100%; }
+    .main-layer .container-fluid .bg-layer {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-image: url(./img/ground.png);
+      background-size: auto 20%;
+      background-repeat: repeat-x;
+      background-position-y: bottom; }
+    .main-layer .container-fluid .footer {
+      width: 100%;
+      position: absolute;
+      bottom: 10px; }
+      .main-layer .container-fluid .footer p {
+        font-size: 12px;
+        margin-bottom: 0; }
+      .main-layer .container-fluid .footer a {
+        color: #333; }
+  .main-layer .maincontent-wrapper {
+    position: relative;
+    width: 680px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 6% 0 20px 0;
+    background-image: url(./img/nubes-bkg.png);
+    background-position-y: 36%; }
+
+.main-content {
+  text-align: center;
+  transition: all 200ms ease-in-out 200ms;
+  transform: scale(0.9);
+  opacity: 0; }
+  .main-content p {
+    font-size: 15px;
+    margin-bottom: 2px; }
+  .main-content .weather-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+    transform: scale(0.7); }
+    .main-content .weather-img.broken-clouds {
+      background-image: url(./img/broken-clouds.svg);
+      height: 120px;
+      width: 200px; }
+  .main-content .temperature {
+    font-size: 62px;
+    font-weight: 300; }
+  .main-content .city {
+    font-size: 56px;
+    text-shadow: 0px 3px 0px rgba(50, 50, 50, 0.5); }
+  .main-content .weather-description {
+    font-size: 27px;
+    font-weight: 300;
+    padding-bottom: 20px; }
+  .main-content .weather-details .keys {
+    display: inline-block;
+    padding: 0 2px; }
+    .main-content .weather-details .keys p {
+      text-align: right;
+      color: rgba(250, 250, 250, 0.8);
+      font-weight: 300; }
+  .main-content .weather-details .values {
+    display: inline-block;
+    padding: 0 2px; }
+    .main-content .weather-details .values p {
+      text-align: left; }
+  .main-content.fade-in {
+    transform: scale(1);
+    opacity: 1; }
+
+@media screen and (max-width: 550px) {
+  .main-layer .maincontent-wrapper {
+    padding-top: 15%;
+    background-position-y: 40%; } }
+.menu-layer {
+  width: 100%;
+  height: 100%;
+  bottom: 1000px;
+  display: block;
+  background: #0085D1;
+  background: #0085D1;
+  background: -moz-linear-gradient(top, #0085D1 0%, #85DBE6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0085D1), color-stop(100%, #85DBE6));
+  background: -webkit-linear-gradient(top, #0085D1 0%, #85DBE6 100%);
+  background: -o-linear-gradient(top, #0085D1 0%, #85DBE6 100%);
+  background: -ms-linear-gradient(top, #0085D1 0%, #85DBE6 100%);
+  background: linear-gradient(to bottom, #0085D1 0%, #85DBE6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  opacity: 1;
+  transition: all 400ms ease-in-out; }
+  .menu-layer.menu-down {
+    transform: translateY(1000px);
+    min-height: 400px; }
+
+.menu-wrapper {
+  position: relative;
+  display: block;
+  top: 150px; }
+  .menu-wrapper .logo {
+    background: url(./img/weder-logo.svg);
+    height: 94px;
+    width: 280px;
+    display: block;
+    margin: 0 auto;
+    background-size: cover;
+    right: 10px;
+    position: relative; }
+  .menu-wrapper p {
+    font-size: 12px; }
+    .menu-wrapper p a {
+      color: #666; }
+  .menu-wrapper .menu-element {
+    opacity: 0;
+    position: relative;
+    bottom: 50px; }
+
+.animate-menu .menu-element:nth-child(3) {
+  bottom: 0;
+  transition: all 300ms ease-in-out 200ms;
+  opacity: 1; }
+.animate-menu .menu-element:nth-child(2) {
+  bottom: 0;
+  transition: all 300ms ease-in-out 400ms;
+  opacity: 1; }
+.animate-menu .menu-element:nth-child(1) {
+  bottom: 0;
+  transition: all 300ms ease-in-out 600ms;
+  opacity: 1; }
+.animate-menu .menu-element:nth-child(0) {
+  bottom: 0;
+  transition: all 300ms ease-in-out 800ms;
+  opacity: 1; }
+
+.main-search {
+  padding: 30px 0 20px 0; }
+  .main-search .input-group {
+    width: 400px;
+    height: 50px; }
+    .main-search .input-group input {
+      border: none;
+      border-radius: 0;
+      color: #666;
+      font-size: 15px; }
+      .main-search .input-group input::-webkit-input-placeholder {
+        color: #bbb; }
+      .main-search .input-group input:-moz-placeholder {
+        color: #bbb; }
+      .main-search .input-group input::-moz-placeholder {
+        color: #bbb; }
+      .main-search .input-group input:-ms-input-placeholder {
+        color: #bbb; }
+      .main-search .input-group input:hover {
+        z-index: 0; }
+  .main-search .btn-secondary {
+    background-color: #A18BB4;
+    color: white;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 300; }
+    .main-search .btn-secondary:focus {
+      box-shadow: none; }
+
+@media screen and (max-width: 550px) {
+  .main-search .input-group {
+    width: 280px; } }
+
+/*# sourceMappingURL=styles.css.map */
