@@ -46,7 +46,7 @@ class App extends Component {
       }
     })
 
-    const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=dc9ac33e49fb812dcc4b4f89e23f2576&units=metric';
+    const OPEN_WEATHER_MAP_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?appid=dc9ac33e49fb812dcc4b4f89e23f2576&units=metric';
 
     var encodedLocation = encodeURIComponent(location);
     var requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
