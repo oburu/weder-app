@@ -9,7 +9,7 @@ const WeatherMessage = ({temp, location, description, image}) => {
       <p className="weather-description">{description}</p>
       <img alt="myTime" src={IMAGE_URL} />
 
-      <p className="temperature">{temp}°</p>
+      <p className="temperature">{Math.round(temp)}°</p>
       <div className="weather-details">
         <div className="wd keys">
           <p className="pressure">Pressure</p>

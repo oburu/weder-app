@@ -54,7 +54,6 @@ class App extends Component {
     //here is were the request is made
     axios.get(requestUrl)
     .then(function (res) {
-      console.log(res.data.weather[0].icon)
       that.setState({
         weather: {
           location: res.data.name,

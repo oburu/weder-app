@@ -97,7 +97,7 @@ a:hover, a:focus {
       position: absolute;
       bottom: 10px; }
       .main-layer .container-fluid .footer p {
-        font-size: 12px;
+        font-weight: 300;
         margin-bottom: 0; }
       .main-layer .container-fluid .footer a {
         color: #333; }
@@ -105,10 +105,9 @@ a:hover, a:focus {
     position: relative;
     width: 680px;
     height: 100%;
-    margin-top: 10%;
     background-size: contain;
     background-repeat: no-repeat;
-    padding: 6% 0 20px 0;
+    padding: 13% 0 20px 0;
     background-image: url(./img/nubes-bkg.png);
     background-position-y: 36%; }
 
@@ -121,8 +120,7 @@ a:hover, a:focus {
     font-size: 15px;
     margin-bottom: 2px; }
   .main-content img {
-    height:auto;
-    width:180px;
+    
     }
 
   .main-content .temperature {
@@ -191,7 +189,7 @@ a:hover, a:focus {
     right: 10px;
     position: relative; }
   .menu-wrapper p {
-    font-size: 12px; }
+    font-weight: 300}
     .menu-wrapper p a {
       color: #666; }
   .menu-wrapper .menu-element {
