@@ -1,7 +1,7 @@
 import React from 'react';
 
 // more stateless component and es6 deconstructor :)
-const WeatherMessage = ({temp, location, description, image}) => {
+const WeatherMessage = ({temp, location, description, image, humidity, pressure}) => {
   const IMAGE_URL = require('../css/img/icons/'+image+'.svg');
   return(
     <div>
@@ -16,8 +16,8 @@ const WeatherMessage = ({temp, location, description, image}) => {
           <p className="humidity">Humidity</p>
         </div>
         <div className="wd values">
-          <p>1006hpa</p>
-          <p>52%</p>
+          <p>{pressure} hpa</p>
+          <p>{humidity} %</p>
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@ class SearchPanel extends Component{
                   </form>
                 </div>
                 <div className="menu-element">
-                  <p>Made with love and sweat by <a href="#" target="_blank">Rebus.io</a></p>
+                  <p>Made with love and sweat by <a href="#" target="_blank">Rebus.io</a> | <a href="https://github.com/oburu/weder-app" target="_blank">GitHub </a></p>
                 </div>
               </div>
             </div>

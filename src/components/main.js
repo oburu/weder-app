@@ -3,12 +3,12 @@ import WeatherMessage from './weather_message';
 
 class Main extends Component{
   render(){
-    let {isLoading, location, temp, description, image, errorMessage} = this.props.weather;
+    let {isLoading, location, temp, description, image, errorMessage , humidity, pressure} = this.props.weather;
     let renderMessage = () =>{
       if(isLoading){
         return <p className="weather-description">Fetching weather, please wait... </p>
       }else if (temp && location){
-        return <WeatherMessage location={location} temp={temp} description={description} image={image}/>
+        return <WeatherMessage location={location} temp={temp} description={description} image={image} humidity={humidity} pressure={pressure}/>
       }
     }
 
@@ -18,7 +18,7 @@ class Main extends Component{
       }
     }
     return(
-      <section className="section main-layer day">
+      <section className={this.props.currentTime}>
         <div className="container-fluid">
           <div className="row">
             <div className="bg-layer d-flex justify-content-center">
@@ -28,7 +28,7 @@ class Main extends Component{
                   {renderError()}
                 </div>
                 <div className="footer">
-                  <p>Made with love and sweat by <a href="#" target="_blank">Rebus.io</a></p>
+                  <p>Made with love and sweat by <a href="#" target="_blank">Rebus.io</a> | <a href="https://github.com/oburu/weder-app" target="_blank">GitHub </a></p>
                 </div>
               </div>
             </div>
