@@ -105,6 +105,7 @@ a:hover, a:focus {
     position: relative;
     width: 680px;
     height: 100%;
+    margin-top: 10%;
     background-size: contain;
     background-repeat: no-repeat;
     padding: 6% 0 20px 0;
@@ -119,16 +120,11 @@ a:hover, a:focus {
   .main-content p {
     font-size: 15px;
     margin-bottom: 2px; }
-  .main-content .weather-img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: block;
-    margin: 0 auto;
-    transform: scale(0.7); }
-    .main-content .weather-img.broken-clouds {
-      background-image: url(./img/broken-clouds.svg);
-      height: 120px;
-      width: 200px; }
+  .main-content img {
+    height:auto;
+    width:180px;
+    }
+
   .main-content .temperature {
     font-size: 62px;
     font-weight: 300; }
@@ -138,6 +134,7 @@ a:hover, a:focus {
   .main-content .weather-description {
     font-size: 27px;
     font-weight: 300;
+    text-transform: capitalize;
     padding-bottom: 20px; }
   .main-content .weather-details .keys {
     display: inline-block;

@@ -54,12 +54,13 @@ class App extends Component {
     //here is were the request is made
     axios.get(requestUrl)
     .then(function (res) {
+      console.log(res.data.weather[0].icon)
       that.setState({
         weather: {
           location: res.data.name,
           temp: res.data.main.temp,
           description:res.data.weather[0].description,
-          image:`http://openweathermap.org/img/w/${res.data.weather[0].icon}.png`,
+          image:res.data.weather[0].icon,
           isLoading: false
         }
       });

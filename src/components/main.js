@@ -6,7 +6,7 @@ class Main extends Component{
     let {isLoading, location, temp, description, image, errorMessage} = this.props.weather;
     let renderMessage = () =>{
       if(isLoading){
-        return <h3>Fetching weather... </h3>
+        return <p className="weather-description">Fetching weather, please wait... </p>
       }else if (temp && location){
         return <WeatherMessage location={location} temp={temp} description={description} image={image}/>
       }
@@ -14,11 +14,11 @@ class Main extends Component{
 
     let renderError = () => {
       if(typeof errorMessage === 'string'){
-        return <div>{errorMessage}</div>
+        return <p className="weather-description">{errorMessage}</p>
       }
     }
     return(
-      <section className="section main-layer night">
+      <section className="section main-layer day">
         <div className="container-fluid">
           <div className="row">
             <div className="bg-layer d-flex justify-content-center">
