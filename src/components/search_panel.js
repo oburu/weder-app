@@ -24,6 +24,7 @@ class SearchPanel extends Component{
 
     if (location.length > 0){
       this.refs.location.value = '';
+      this.refs.location.blur();
       this.props.onSearch(location);
     }
   }
