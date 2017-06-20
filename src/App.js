@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       menuDown: MENU_LAYER_DOWN,
       fadeIn: MAIN_FADE_IN,
+      firstTime: true,
       weather:{
         isLoading : false
       }
@@ -25,7 +26,8 @@ class App extends Component {
   }
 
   showMenu(){
-    let menuDown = this.state.menuDown === MENU_LAYER_DOWN ? 'section menu-layer' : MENU_LAYER_DOWN;
+    //console.log(this.state.firstTime );
+    let menuDown = this.state.menuDown === MENU_LAYER_DOWN && !this.state.firstTime ? 'section menu-layer' : MENU_LAYER_DOWN;
     let fadeIn = this.state.fadeIn === MAIN_FADE_IN ? 'main-content fade-in' : MAIN_FADE_IN;
     this.setState({
       menuDown,
@@ -45,7 +47,8 @@ class App extends Component {
         pressure:undefined,
         humidity:undefined,
         description: undefined
-      }
+      },
+      firstTime:false
     })
 
     const OPEN_WEATHER_MAP_URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?appid=dc9ac33e49fb812dcc4b4f89e23f2576&units=metric';
@@ -92,7 +95,7 @@ class App extends Component {
         return 'fetching data...';
       }
     }
-    console.log(val());
+    //console.log(val());
     return (
       <div>
         <Burger showMenu={this.showMenu}/>
